@@ -4,9 +4,8 @@
 Comprehensive statistical analysis of Netflix's movie and TV show catalog, including data cleaning, exploratory data analysis (EDA), professional visualizations, and statistical inference. This project demonstrates rigorous data science methodology and meets all academic requirements for statistical analysis coursework.
 
 ##  Quick Links
-- **GitHub Repository**: [Insert your repository URL here]
-- **Google Colab Version**: [Optional - Insert Colab notebook link]
-- **Live Demo**: [Optional - Insert deployed version]
+- **GitHub Repository**: [https://github.com/BM-MINNIE/DES432_Project1_Netflix.git]
+- **Google Colab Version**: [https://colab.research.google.com/drive/1prfmE3bRgpOAWBnd3N9uGpPirNxMtc19?usp=sharing]
 
 ##  Dataset Description
 
@@ -43,14 +42,7 @@ netflix-analysis/
 ├── netflix_titles.csv               # Original dataset (you provide)
 │
 ├── README.md                        # This file
-├── requirements.txt                 # Python dependencies
 ├── PROJECT_REPORT.txt              # Comprehensive written report (70+ pages)
-├── PROJECT_SUMMARY.txt             # Quick reference guide
-│
-├── GITHUB_SETUP_GUIDE.md           # GitHub repository setup instructions
-├── COLAB_SETUP_GUIDE.md            # Google Colab usage guide
-├── TROUBLESHOOTING.md              # Solutions for common issues
-├── OUTPUT_FILES_GUIDE.md           # Details about generated files
 │
 ├── netflix_data_cleaned.csv         #  Generated: Cleaned dataset (all titles)
 ├── netflix_movies_cleaned.csv       #  Generated: Movies only
@@ -109,7 +101,6 @@ python netflix_analysis.py
 4. Run and upload `netflix_titles.csv` when prompted
 5. All outputs display inline
 
-**See `COLAB_SETUP_GUIDE.md` for detailed instructions**
 
 ##  Installation
 
@@ -277,7 +268,7 @@ scipy>=1.7.0
 - Decision rule application
 - Practical interpretation with uncertainty
 
-## 🎯 Key Findings
+##  Key Findings
 
 ### Dataset Composition
 - **Total**: 8,807 titles
@@ -382,7 +373,7 @@ scipy>=1.7.0
 **"FileNotFoundError: netflix_titles.csv not found"**
 -  Place CSV in same folder as script
 -  Check filename is exactly `netflix_titles.csv`
--  See `TROUBLESHOOTING.md` for solutions
+
 
 **"ModuleNotFoundError: No module named 'pandas'"**
 -  Install packages: `pip install -r requirements.txt`
@@ -395,20 +386,15 @@ scipy>=1.7.0
 -  Check `plots/` folder for PNG files
 -  Plots are saved, not displayed interactively
 
-**See `TROUBLESHOOTING.md` for complete solutions**
 
 ##  Documentation
 
 | File | Purpose |
 |------|---------|
 | `PROJECT_REPORT.txt` | Complete 70+ page analysis report |
-| `PROJECT_SUMMARY.txt` | Quick reference guide |
-| `GITHUB_SETUP_GUIDE.md` | GitHub repository setup |
-| `COLAB_SETUP_GUIDE.md` | Google Colab instructions |
-| `TROUBLESHOOTING.md` | Common issues and solutions |
-| `OUTPUT_FILES_GUIDE.md` | Generated files documentation |
 
-## 🎓 Academic Requirements
+
+##  Academic Requirements
 
 ### All Requirements Met
 
