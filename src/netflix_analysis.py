@@ -41,7 +41,7 @@ for csv_path in csv_locations:
         continue
 
 if df is None:
-    print("\n❌ ERROR: netflix_titles.csv not found!")
+    print("\n ERROR: netflix_titles.csv not found!")
     print("\nPlease ensure 'netflix_titles.csv' is in one of these locations:")
     print(f"1. Same directory as this script: {script_dir}")
     print(f"2. Current working directory: {os.getcwd()}")
