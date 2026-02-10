@@ -52,12 +52,12 @@ netflix-analysis/
 ├── TROUBLESHOOTING.md              # Solutions for common issues
 ├── OUTPUT_FILES_GUIDE.md           # Details about generated files
 │
-├── netflix_data_cleaned.csv         # ✨ Generated: Cleaned dataset (all titles)
-├── netflix_movies_cleaned.csv       # ✨ Generated: Movies only
-├── netflix_tvshows_cleaned.csv      # ✨ Generated: TV shows only
-├── analysis_summary.txt             # ✨ Generated: Key statistics
+├── netflix_data_cleaned.csv         #  Generated: Cleaned dataset (all titles)
+├── netflix_movies_cleaned.csv       #  Generated: Movies only
+├── netflix_tvshows_cleaned.csv      #  Generated: TV shows only
+├── analysis_summary.txt             #  Generated: Key statistics
 │
-└── plots/                           # ✨ Generated: All visualizations
+└── plots/                           #  Generated: All visualizations
     ├── 01_content_type_distribution.png
     ├── 02_release_year_distribution.png
     ├── 03_movie_duration_distribution.png
@@ -432,9 +432,9 @@ scipy>=1.7.0
 ##  Team Information
 
 **Team Members:**
-- [Your Name] - [Your Email]
-- [Team Member 2] - [Email]
-- [Team Member 3] - [Email]
+- [Chalisa Hongpothipan] - [6622770434]
+- [Wichaya Tangtanasub] - [6622771481]
+- [Ploybhailyn Punyadirek] - [6622781506]
 
 **Course:** [DES432 - Statistics and Data Modeling]  
 **Institution:** [Sirindhorn International Institute of Technology]  
