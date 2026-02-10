@@ -1,11 +1,3 @@
-"""
-Netflix Titles Dataset Analysis
-================================
-This script performs comprehensive data analysis on the Netflix titles dataset,
-including data cleaning, EDA, visualization, and statistical inference.
-
-IMPORTANT: Place netflix_titles.csv in the same folder as this script!
-"""
 
 import pandas as pd
 import numpy as np
@@ -49,7 +41,7 @@ for csv_path in csv_locations:
         continue
 
 if df is None:
-    print("\n ERROR: netflix_titles.csv not found!")
+    print("\n❌ ERROR: netflix_titles.csv not found!")
     print("\nPlease ensure 'netflix_titles.csv' is in one of these locations:")
     print(f"1. Same directory as this script: {script_dir}")
     print(f"2. Current working directory: {os.getcwd()}")
@@ -475,6 +467,89 @@ KEY FINDINGS:
 7. Limited series model dominant (median 1 season for TV shows)
 
 ✓ All 10 visualizations saved to: {plots_dir}/
-✓ Analysis complete!
 """)
+
+# ============================================================================
+# SAVE CLEANED DATASETS
+# ============================================================================
+print("\n" + "="*80)
+print("SAVING CLEANED DATASETS")
 print("="*80)
+
+# Save main cleaned dataset
+output_csv_path = os.path.join(script_dir, 'netflix_data_cleaned.csv')
+df_clean.to_csv(output_csv_path, index=False)
+
+print(f"\n✓ Cleaned dataset saved to: {output_csv_path}")
+print(f"\nCleaned dataset includes:")
+print(f"  - All original columns")
+print(f"  - year_added, month_added (extracted from date_added)")
+print(f"  - has_director, has_cast, has_country (indicator variables)")
+print(f"  - duration_value (numeric duration)")
+print(f"\nTotal rows: {len(df_clean)}")
+print(f"Total columns: {len(df_clean.columns)}")
+
+# Also save separate files for movies and TV shows
+movies_csv_path = os.path.join(script_dir, 'netflix_movies_cleaned.csv')
+tvshows_csv_path = os.path.join(script_dir, 'netflix_tvshows_cleaned.csv')
+
+df_movies.to_csv(movies_csv_path, index=False)
+df_tvshows.to_csv(tvshows_csv_path, index=False)
+
+print(f"\n✓ Movies dataset saved to: {movies_csv_path}")
+print(f"  ({len(df_movies)} rows)")
+print(f"\n✓ TV Shows dataset saved to: {tvshows_csv_path}")
+print(f"  ({len(df_tvshows)} rows)")
+
+# Create a summary statistics file
+summary_stats_path = os.path.join(script_dir, 'analysis_summary.txt')
+with open(summary_stats_path, 'w') as f:
+    f.write("="*80 + "\n")
+    f.write("NETFLIX DATASET ANALYSIS - SUMMARY STATISTICS\n")
+    f.write("="*80 + "\n\n")
+    
+    f.write("DATASET OVERVIEW\n")
+    f.write("-"*80 + "\n")
+    f.write(f"Total Titles: {len(df_clean)}\n")
+    f.write(f"Movies: {len(df_movies)} ({len(df_movies)/len(df_clean)*100:.1f}%)\n")
+    f.write(f"TV Shows: {len(df_tvshows)} ({len(df_tvshows)/len(df_clean)*100:.1f}%)\n\n")
+    
+    f.write("MOVIE STATISTICS\n")
+    f.write("-"*80 + "\n")
+    f.write(f"Mean Duration: {mean_duration:.2f} minutes\n")
+    f.write(f"Median Duration: {df_movies['duration_value'].median():.2f} minutes\n")
+    f.write(f"Std Dev: {std_duration:.2f} minutes\n")
+    f.write(f"95% CI: ({ci_lower:.2f}, {ci_upper:.2f}) minutes\n\n")
+    
+    f.write("TV SHOW STATISTICS\n")
+    f.write("-"*80 + "\n")
+    f.write(f"Mean Seasons: {mean_seasons:.2f}\n")
+    f.write(f"Median Seasons: {df_tvshows['duration_value'].median():.0f}\n")
+    f.write(f"Std Dev: {std_seasons:.2f}\n")
+    f.write(f"95% CI: ({ci_lower_tv:.2f}, {ci_upper_tv:.2f}) seasons\n\n")
+    
+    f.write("HYPOTHESIS TEST RESULTS\n")
+    f.write("-"*80 + "\n")
+    f.write(f"Movies vs TV Shows (Release Year):\n")
+    f.write(f"  t-statistic: {t_stat:.4f}\n")
+    f.write(f"  p-value: {p_value:.6f}\n")
+    f.write(f"  Decision: {'REJECT H₀' if p_value < 0.05 else 'FAIL TO REJECT H₀'}\n\n")
+    f.write(f"Movie Duration vs 100 min Standard:\n")
+    f.write(f"  t-statistic: {t_stat_one:.4f}\n")
+    f.write(f"  p-value: {p_value_one:.6f}\n")
+    f.write(f"  Decision: {'REJECT H₀' if p_value_one < 0.05 else 'FAIL TO REJECT H₀'}\n\n")
+    
+    f.write("="*80 + "\n")
+
+print(f"\n✓ Summary statistics saved to: {summary_stats_path}")
+
+print("\n" + "="*80)
+print("✓ ANALYSIS COMPLETE!")
+print("="*80)
+print(f"\nGenerated files:")
+print(f"  📊 Visualizations: {plots_dir}/ (10 PNG files)")
+print(f"  📄 Cleaned data: {output_csv_path}")
+print(f"  🎬 Movies only: {movies_csv_path}")
+print(f"  📺 TV shows only: {tvshows_csv_path}")
+print(f"  📝 Summary stats: {summary_stats_path}")
+print("\n" + "="*80)
