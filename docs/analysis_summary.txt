@@ -1,0 +1,37 @@
+================================================================================
+NETFLIX DATASET ANALYSIS - SUMMARY STATISTICS
+================================================================================
+
+DATASET OVERVIEW
+--------------------------------------------------------------------------------
+Total Titles: 8807
+Movies: 6131 (69.6%)
+TV Shows: 2676 (30.4%)
+
+MOVIE STATISTICS
+--------------------------------------------------------------------------------
+Mean Duration: 99.58 minutes
+Median Duration: 98.00 minutes
+Std Dev: 28.29 minutes
+95% CI: (98.87, 100.29) minutes
+
+TV SHOW STATISTICS
+--------------------------------------------------------------------------------
+Mean Seasons: 1.76
+Median Seasons: 1
+Std Dev: 1.58
+95% CI: (1.70, 1.82) seasons
+
+HYPOTHESIS TEST RESULTS
+--------------------------------------------------------------------------------
+Movies vs TV Shows (Release Year):
+  t-statistic: -17.3394
+  p-value: 0.000000
+  Decision: REJECT H₀
+
+Movie Duration vs 100 min Standard:
+  t-statistic: -1.1699
+  p-value: 0.242068
+  Decision: FAIL TO REJECT H₀
+
+================================================================================
