@@ -387,12 +387,6 @@ scipy>=1.7.0
 -  Plots are saved, not displayed interactively
 
 
-##  Documentation
-
-| File | Purpose |
-|------|---------|
-| `PROJECT_REPORT.txt` | Complete 70+ page analysis report |
-
 
 ##  Academic Requirements
 
@@ -425,7 +419,7 @@ scipy>=1.7.0
 **Course:** [DES432 - Statistics and Data Modeling]  
 **Institution:** [Sirindhorn International Institute of Technology]  
 **Semester:** [Second Term , Year 2025 ]  
-**Instructor:** [Pokpong Songmuang]
+**Instructor:** [Asst. Prof. Dr. Pokpong Songmuang]
 
 ##  License
 
